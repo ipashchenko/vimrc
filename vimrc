@@ -42,6 +42,12 @@ noremap <silent> <c-j> <C-W>j
 noremap <silent> <c-h> <C-W>h
 noremap <silent> <c-l> <C-W>l
 
+"Nightmare mode
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -71,6 +77,8 @@ Bundle 'vim-scripts/surround.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
+Bundle 'mileszs/ack.vim'
+Bundle 'git://github.com/kien/ctrlp.vim'
 
 
 "репозитории vim/scripts
