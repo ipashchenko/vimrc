@@ -37,11 +37,18 @@ syntax on
 set nocp
 
 
+noremap <silent> <c-k> <C-W>k
+noremap <silent> <c-j> <C-W>j
+noremap <silent> <c-h> <C-W>h
+noremap <silent> <c-l> <C-W>l
+
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Vundle setup
 set nocompatible
-filetype off  “обязательно!
+"required:
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 
@@ -51,15 +58,17 @@ filetype plugin indent on     " обязательно!
 
 "репозитории на github
 Bundle 'klen/python-mode'
-Bundle 'klen/ctrlp.vim'
-Bundle 'vim-scripts/minibufexpl'
+Bundle 'sjl/gundo.vim'
+Bundle 'mhinz/vim-startify'
+Bundle 'fholgado/minibufexpl.vim'
 Bundle 'vim-scripts/TaskList.vim'
+Bundle 'vim-scripts/sessionman.vim'
 Bundle 'vim-scripts/SuperTab'
 Bundle 'vim-scripts/The-NERD-tree'
 Bundle 'vim-scripts/The-NERD-Commenter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-scripts/surround.vim'
-Bundle 'klen/rainbow_parentheses.vim'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 
@@ -184,15 +193,9 @@ let g:pymode_lint_maxheight = 6
 
 
 "miniBufExpl
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplSplitBelow=0
-let g:miniBufExplMapWindowNavArrows = 0
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplorerMoreThanOne = 0
-
-let g:miniBufExplorerMaxHeight = 2
-let g:miniBufExplorerMinHeight = 2
+  map <Leader>mbe :MBEOpen<cr>
+  map <Leader>mbc :MBEClose<cr>
+  map <Leader>mbt :MBEToggle<cr>
 
 
 
@@ -208,9 +211,6 @@ let g:solarized_style = "dark"
 let g:solarized_contrast = "normal"
 let g:solarized_visibility = "normal"
 set t_Co=16
-
-
-
 colorscheme solarized
 
 
