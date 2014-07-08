@@ -1,33 +1,82 @@
-call pathogen#infect()
-
 " change the mapleader from \ to ,
 let mapleader=","
 nnoremap ; :
+
+
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+
+
 "It hides buffers instead of closing them. This means that you can have unwritten changes to a file and open a new file using :e, without being forced to write or undo your changes first. Also, undo buffers and marks are preserved while the buffer is open. This is an absolute must-have.
 set hidden
 
+
+
+
 "when you forgot to sudo before editing a file that requires root privileges (typically /etc/hosts). This lets you use w!! to do that after you opened the file already:
 cmap w!! w !sudo tee % >/dev/null
+
+
+
 
 set background=dark
 set noswapfile
 "Удаление лишних пробелов в конце строк, перед сохранением файла(прописываем в .vimrc):
 au BufWritePre * silent g/\s\+$/s///
 
+
+
+
 set number
 set fileformat=unix
 syntax enable
 syntax on
-"indenting intelligence is enabled based on the syntax rules for the file type
-filetype plugin indent on
 set nocp
-"code(omni) completion - require vim compiled with +python
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Vundle setup
+set nocompatible
+filetype off  “обязательно!
+
+set rtp+=~/.vim/bundle/vundle/
+
+call vundle#rc()
+
+filetype plugin indent on     " обязательно!
+
+"репозитории на github
+Bundle 'klen/python-mode'
+Bundle 'klen/ctrlp.vim'
+Bundle 'vim-scripts/minibufexpl'
+Bundle 'vim-scripts/TaskList.vim'
+Bundle 'vim-scripts/SuperTab'
+Bundle 'vim-scripts/The-NERD-tree'
+Bundle 'vim-scripts/The-NERD-Commenter'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-scripts/surround.vim'
+Bundle 'klen/rainbow_parentheses.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-fugitive'
+
+
+"репозитории vim/scripts
+"Bundle 'smth'
+
+"git репозитории (не на github)
+"Bundle 'git://git.wincent.com/command-t.git'
+
+"локальные git репозитории(если работаете над собственным плагином)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+"Vundle setup off
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
 
 "PEP8 - Python StyleGuide
 set nowrap        " don't wrap lines
@@ -43,8 +92,12 @@ set copyindent    " copy the previous indentation on autoindenting
 "set foldlevel=99
 
 
+
+
 "Отступы между черточками, разделяющие окно редактора можно убрать так
 set fillchars=stl:\ ,stlnc:\ ,vert:│
+
+
 
 "
 "FROM Jenyay
@@ -84,6 +137,9 @@ set columns=150
 
 "END From Jenyay
 "
+
+
+
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
@@ -100,12 +156,18 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 
 
+
+
 nnoremap <C-Tab> :bnext<CR>
 nnoremap <C-S-Tab> :bprevious<CR>
+
+
 
 set ofu=syntaxcomplete#Complete
 let python_highlight_all = 1
 let python_slow_sync = 1
+
+
 
 
 "Pythone-Mode
@@ -133,6 +195,8 @@ let g:miniBufExplorerMaxHeight = 2
 let g:miniBufExplorerMinHeight = 2
 
 
+
+
 "Solarized
 let g:solarized_termcolors=256
 "0
@@ -145,13 +209,19 @@ let g:solarized_contrast = "normal"
 let g:solarized_visibility = "normal"
 set t_Co=16
 
+
+
 colorscheme solarized
+
+
 
 "TagBar
 nnoremap <silent> <F9> :TagbarToggle<CR>
 let g:tagbar_width = 30
 let g:tagbar_sort = 0
 let g:tagbar_compact = 1
+
+
 
 "TaskList
 nnoremap <silent> <F8> :TlistToggle<CR>
@@ -175,8 +245,12 @@ let Tlist_Use_Right_Window = 0
 let Tlist_Use_SingleClick = 1
 let Tlist_WinWidth = 25
 
+
+
 map T :TaskList<CR>
 "map P :TlistToggle<CR>
+
+
 
 "RainbowParenthesis
 au VimEnter * RainbowParenthesesToggle
@@ -192,36 +266,7 @@ let g:gundo_preview_height = 40
 let g:gundo_right = 1
 let g:gundo_preview_bottom = 1
 
-"Airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
 
-let g:bufferline_echo = 0
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
-let g:airline_linecolumn_prefix = '¶ '
-let g:airline_fugitive_prefix = '⎇ '
-let g:airline_paste_symbol = 'ρ'
-let g:airline_enable_bufferline=0
-let g:airline_enable_minibufexplorer=0
-
-"enable/disable tagbar integration
-let g:airline#extensions#tagbar#enabled = 0
-
-" unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.whitespace = 'Ξ'
 
 "GVIM STUFF
 set guioptions-=m  "remove menu bar
@@ -229,9 +274,8 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 set guifont=Monospace\ 12
-"set guifont=UbuntuMono\ for\ Powerline:h12
 set encoding=utf-8
-let g:Powerline_symbols = 'fancy'
+
 
 "set statusline+=%{fugitive#statusline()}
 "set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
@@ -243,10 +287,14 @@ set statusline=%F%m%r%h%w\ %{fugitive#statusline()}
 imap <F3> import ipdb; ipdb.set_trace(
 au BufRead *.py nmap <F5> :!ipython2 %
 
+
+
 "http://vk.com/club50185211
 "Практически самая главная опция которая должна присутствовать в .vimrc у
 "русскоговорящих Виммеров:
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
+
 
 "Чтобы изменять отступы строк используют клавиши > и < . Эти клавиши действуют
 "и при визуальном выделении. Только при перемещении, блок теряет выделение.
@@ -254,6 +302,8 @@ set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁ
 "хак:
 vnoremap < <gv
 vnoremap > >gv
+
+
 
 "После перехода с однорежимного текстового редактора, вы вероятно заметите, что
 "по умолчанию, vim не переходит на новую строку когда курсор доходит до
