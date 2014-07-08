@@ -78,7 +78,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
-Bundle 'git://github.com/kien/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 
 
 "репозитории vim/scripts
@@ -149,8 +149,8 @@ imap ( ()<LEFT>
 imap { {}<LEFT>
 
 " размеры окна
-set lines=100
-set columns=150
+"set lines=100
+"set columns=150
 
 "END From Jenyay
 "
