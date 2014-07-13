@@ -79,6 +79,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'Rykka/riv.vim'
 
 
 "репозитории vim/scripts
