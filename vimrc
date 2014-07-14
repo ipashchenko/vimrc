@@ -52,44 +52,72 @@ noremap <Right> <NOP>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Vundle setup
-set nocompatible
-"required:
-filetype off
+set nocompatible       " be iMproved, required
+filetype off           " required
 
-set rtp+=~/.vim/bundle/vundle/
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-call vundle#rc()
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-filetype plugin indent on     " обязательно!
 
 "репозитории на github
-Bundle 'klen/python-mode'
-Bundle 'sjl/gundo.vim'
-Bundle 'mhinz/vim-startify'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'vim-scripts/TaskList.vim'
-Bundle 'vim-scripts/sessionman.vim'
-Bundle 'vim-scripts/SuperTab'
-Bundle 'vim-scripts/The-NERD-tree'
-Bundle 'vim-scripts/The-NERD-Commenter'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'vim-scripts/surround.vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'tpope/vim-fugitive'
-Bundle 'mileszs/ack.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'Rykka/riv.vim'
+Plugin 'klen/python-mode'
+Plugin 'sjl/gundo.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'vim-scripts/TaskList.vim'
+Plugin 'vim-scripts/sessionman.vim'
+Plugin 'vim-scripts/SuperTab'
+Plugin 'vim-scripts/The-NERD-tree'
+Plugin 'vim-scripts/The-NERD-Commenter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/surround.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Rykka/riv.vim'
 
 
-"репозитории vim/scripts
-"Bundle 'smth'
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+"Plugin 'user/L9', {'name': 'newL9'}
 
-"git репозитории (не на github)
-"Bundle 'git://git.wincent.com/command-t.git'
 
-"локальные git репозитории(если работаете над собственным плагином)
-"Bundle 'file:///Users/gmarik/path/to/plugin'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 "Vundle setup off
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
