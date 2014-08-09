@@ -84,6 +84,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Rykka/riv.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'bkad/CamelCaseMotion'
 
 
 " The following are examples of different formats supported.
