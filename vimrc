@@ -83,6 +83,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Rykka/riv.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 
 " The following are examples of different formats supported.
