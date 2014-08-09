@@ -86,6 +86,7 @@ Plugin 'Rykka/riv.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'mhinz/vim-signify'
 
 
 " The following are examples of different formats supported.
