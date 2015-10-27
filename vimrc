@@ -217,7 +217,8 @@ set ofu=syntaxcomplete#Complete
 let python_highlight_all = 1
 let python_slow_sync = 1
 
-
+"Startufy fix on "can't read viminfo"
+set viminfo='100,n$HOME/.vim/files/info/viminfo
 
 
 "Pythone-Mode
@@ -261,6 +262,8 @@ nnoremap <silent> <F9> :TagbarToggle<CR>
 let g:tagbar_width = 30
 let g:tagbar_sort = 0
 let g:tagbar_compact = 1
+let g:tagbar_autofocus = 0 " автофокус на Tagbar при открытии
+
 
 
 
