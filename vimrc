@@ -251,10 +251,6 @@ map <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 
 
-" Работа буфферами
-map <C-q> :bd<CR>         " CTRL+Q - закрыть текущий буффер
-
-
 
 
 "Solarized
