@@ -225,6 +225,7 @@ set viminfo='100,n$HOME/.vim/files/info/viminfo
 " Switch pylint, pyflakes, pep8, mccabe code-checkers
 " Can have multiple values "pep8,pyflakes,mcccabe"
 " Choices are: pyflakes, pep8, mccabe, pylint, pep257
+
 let g:pymode_lint_checker = "pyflakes,pep8,mccabe"
 " Run linter on the fly
 let g:pymode_lint_onfly = 0
@@ -233,11 +234,25 @@ let g:pymode_lint_minheight = 2
 " Maximal height of pylint error window
 let g:pymode_lint_maxheight = 6
 
+" Turn off autocompletion when typing a period
+let g:pymode_rope_complete_on_dot = 0
+
 
 "miniBufExpl
   map <Leader>mbe :MBEOpen<cr>
   map <Leader>mbc :MBEClose<cr>
   map <Leader>mbt :MBEToggle<cr>
+
+
+" NerdTree настройки
+" показать NERDTree на F3
+map <F3> :NERDTreeToggle<CR>
+"игноррируемые файлы с расширениями
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+
+
+" Работа буфферами
+map <C-q> :bd<CR>         " CTRL+Q - закрыть текущий буффер
 
 
 
