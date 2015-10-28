@@ -236,6 +236,9 @@ let g:pymode_lint_maxheight = 6
 
 " Turn off autocompletion when typing a period
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_autoimport = 1
+" This disables opening window with doc while complete
+set completeopt=menu
 
 
 "miniBufExpl
