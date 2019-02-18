@@ -146,7 +146,12 @@ set copyindent    " copy the previous indentation on autoindenting
 
 
 "Отступы между черточками, разделяющие окно редактора можно убрать так
-set fillchars=stl:\ ,stlnc:\ ,vert:│
+"set fillchars=stl:\ ,stlnc:\ ,vert:│
+
+:set statusline=-        " hide file name in statusline
+:set fillchars=stl:-     " fill active window's statusline with -
+:set fillchars+=stlnc:-  " also fill inactive windows
+:set fillchars+=vert:\|  " add a bar for vertical splits
 
 
 
