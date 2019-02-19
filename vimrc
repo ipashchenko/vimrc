@@ -269,7 +269,7 @@ let g:solarized_style = "dark"
 let g:solarized_contrast = "normal"
 let g:solarized_visibility = "normal"
 set t_Co=16
-colorscheme solarized
+silent! colorscheme solarized
 
 
 
